@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tiger Martial Arts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbuEe8VcGo2wqTLU99IWg2KmGkQs4lIcNROr02fRZ5jNGdLjY3Bpj5zh8Qq-_ZwaNKxg&usqp=CAU') no-repeat center center/cover;
+      color: rgb(8, 8, 8);
+      padding: 4em 2em;
+      text-align: center;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    header h1, header p {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    nav {
+      margin-top: 1em;
+    }
+    nav a {
+      color: rgb(12, 12, 12);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em;
+      background: rgb(243, 210, 121);
+    }
+    section {
+      margin-bottom: 3em;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ffffff;
+      margin-bottom: 1em;
+    }
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+    .card {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1em;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1em;
+    }
+    ul li::before {
+      content: "✔";
+      color: #d3d00a;
+      margin-right: 8px;
+    }
+    .login-box {
+      text-align: center;
+      padding: 1em;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .login-box button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background: #219150;
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #2c3e50;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #27ae60;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #2c3e50;
+      color: white;
+    }
+    * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+h1 {
+	font-size: 5.25vmin;
+	text-align: center;
+	color: white;
+}
+
+.wrap {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 100vmin;
+	height: 65vmin;
+	margin: 2rem auto;
+	border: 8px solid;
+	border-image: linear-gradient(
+			-50deg,
+			rgb(235, 117, 8),
+			#e2970b,
+			rgb(240, 224, 10),
+			rgb(209, 212, 33),
+			rgb(233, 235, 124),
+			#d4311c,
+			rgb(226, 160, 17)
+		)
+		1;
+	transition: 0.3s ease-in-out;
+	position: relative;
+	overflow: hidden;
+}
+.overlay {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 1rem 0.75rem;
+	background: #e9be4a;
+	transition: 0.4s ease-in-out;
+	z-index: 1;
+}
+.overlay-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 15vmin;
+	height: 100%;
+	padding: 0.5rem 0 0 0.5rem;
+	border: 3px solid;
+	border-image: linear-gradient(
+			to bottom,
+			#aea724 5%,
+			rgb(233, 169, 97) 35% 65%,
+			#e78e08 95%
+		)
+		0 0 0 100%;
+	transition: 0.3s ease-in-out 0.2s;
+	z-index: 1;
+}
+.image-content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url(https://imgcdn.stablediffusionweb.com/2025/1/3/a8c70d49-ce10-4683-bc63-97b2a847c34d.jpg);
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+.image-content1 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url(https://static.vecteezy.com/system/resources/previews/046/966/581/non_2x/portrait-of-a-young-business-woman-in-a-black-suit-free-photo.jpeg);
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+.image-content2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url(https://i.pinimg.com/736x/7f/7d/8a/7f7d8a2239cccd9b93872c742774037a.jpg);
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+.image-content3 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn3HBjJI_A2jsJjRNAA8JHZ_Mc1-CWMBBx2w&shttps://i.pinimg.com/1200x/1e/7e/37/1e7e373ac4676184e4b0152fead28370.jpg);
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+.image-content4 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url(https://i.pinimg.com/736x/6e/df/7f/6edf7f9993d9300c76f88a012a397110.jpg);
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+.image-content5 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url(https://i.pinimg.com/564x/4e/1c/15/4e1c15358f330921efdff19276ec00ac.jpg);
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+.inset {
+	max-width: 50%;
+	margin: 0.25em 1em 1em 0;
+	border-radius: 0.25em;
+	float: left;
+}
+
+.dots {
+	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 55px;
+	height: 4vmin;
+	transition: 0.3s ease-in-out 0.3s;
+}
+.dot {
+	width: 14px;
+	height: 14px;
+	background: yellow;
+	border: 1px solid indigo;
+	border-radius: 50%;
+	transition: 0.3s ease-in-out 0.3s;
+}
+
+.text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	padding: 3vmin 4vmin;
+	background: #fff;
+	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+	overflow-y: scroll;
+}
+
+.wrap:hover .overlay {
+	transform: translateX(-60vmin);
+}
+.wrap:hover .image-content {
+	width: 30vmin;
+}
+.wrap:hover .overlay-content {
+	border: none;
+	transition-delay: 0.2s;
+	transform: translateX(60vmin);
+}
+.wrap:hover .dots {
+	transform: translateX(1rem);
+}
+.wrap:hover .dots .dot {
+	background: white;
+}
+
+/* Animations and timing delays */
+.animate {
+	animation-duration: 0.7s;
+	animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+	animation-fill-mode: backwards;
+}
+/* Pop In */
+.pop {
+	animation-name: pop;
+}
+@keyframes pop {
+	0% {
+		opacity: 0;
+		transform: scale(0.5, 0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+}
+
+/* Slide In */
+.slide {
+	animation-name: slide;
+}
+@keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translate(4em, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+/* Slide Left */
+.slide-left {
+	animation-name: slide-left;
+}
+@keyframes slide-left {
+	0% {
+		opacity: 0;
+		transform: translate(-40px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+.slide-up {
+	animation-name: slide-up;
+}
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(3em);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.delay-1 {
+	animation-delay: 0.3s;
+}
+.delay-2 {
+	animation-delay: 0.6s;
+}
+.delay-3 {
+	animation-delay: 0.9s;
+}
+.delay-4 {
+	animation-delay: 1.2s;
+}
+.delay-5 {
+	animation-delay: 1.5s;
+}
+.delay-6 {
+	animation-delay: 1.8s;
+}
+.delay-7 {
+	animation-delay: 2.1s;
+}
+.delay-8 {
+	animation-delay: 2.4s;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tiger Martial Arts</h1>
+  <p>Strength. Discipline. Respect.</p>
+  <nav>
+  <a href="index.html#about">About</a>
+  <a href="class.html">Classes</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="instructors.html">Instructors Info</a>
+  <a href="index.html#account">Account</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>Tiger Martial Arts</strong>, Sharjah’s premier training centre for martial arts and fitness. We offer classes in Karate, Jiu-jitsu, Judo, Muay Thai, and self-defence for all age groups and skill levels. Our facility includes a fully-equipped gym, steam room, sauna, and professional-grade mats.</p>
+  </section>
+
+
+<div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content animate slide-left delay-2">
+			<h1 class="animate slide-left pop delay-4">Maurrico</h1>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Gym Owner: <em>Head martial arts coach</em></p>
+		</div>
+		<div class="image-content animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><br>Coaches in all martial arts<br>
+        <br>4th Dan Blackblet judo <br>3rd Dan Blackbelt jiu-jitsu <br>1st Dan Blackbelt karate <br> Accredited Muay Thai coach</p>
+	</div>
+</div>
+ <div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content animate slide-left delay-2">
+			<h1 class="animate slide-left pop delay-4">Sarah Nova</h1>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Assistant martial arts: <em>Coach</em></p>
+		</div>
+		<div class="image-content1 animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><br> 5th Dan Blackblet karate</p>
+	</div>
+</div>
+
+ <div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content animate slide-left delay-2">
+			<h1 class="animate slide-left pop delay-4">Guy Victory</h1>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Assistant martial arts: <em>Coach</em></p>
+		</div>
+		<div class="image-content2 animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><br> 2nd Dan Blackblet jiu-jitsu <br> 1st Dan Blackblet judo<br></p>
+	</div>
+</div>
+
+ <div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content3 animate slide-left delay-2">
+			<h1 class="animate slide-left pop delay-4">Morris Davis</h1>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Assistant martial arts: <em>Coach</em></p>
+		</div>
+		<div class="image-content3 animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><br>Accredited Muay Thai coach <br>3rd Dan Blackblet karate</p>
+	</div>
+</div>
+ <div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content animate slide-left delay-2">
+			<h1 class="animate slide-left pop delay-4">Traci Santiago</h1>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Fitness: <em>Coach</em></p>
+		</div>
+		<div class="image-content4 animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><br>BSc in Sports Science<br>Qualified in health and nutrition<br>Specialist in devising strength and conditioning programs for combat athletes</p>
+	</div>
+</div>
+ <div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content animate slide-left delay-2">
+			<h1 class="animate slide-left pop delay-4">Harpreet Kaur</h1>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Fitness: <em>Coach</em></p>
+		</div>
+		<div class="image-content5 animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><br>BSc in Physiotherapy<br>MSc in Sports Science</p>
+	</div>
+</div>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:md.munna@regentedcation.ae">md.munna@regentedcation.ae</a></p>
+    <p>Phone: +971 56 130 4251</p>
+    <div class="social-icons">
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="Instagram">📸</a>
+      <a href="#" title="YouTube">▶️</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Tiger Martial Arts | Website by WebWorld</p>
+</footer>
+
+</body>
+</html>

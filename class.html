@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Timetable - Tiger Martial Arts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbuEe8VcGo2wqTLU99IWg2KmGkQs4lIcNROr02fRZ5jNGdLjY3Bpj5zh8Qq-_ZwaNKxg&usqp=CAU') no-repeat center center/cover;
+      color: rgb(8, 8, 8);
+      padding: 4em 2em;
+      text-align: center;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    header h1, header p {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    nav {
+      margin-top: 1em;
+    }
+    nav a {
+      color: rgb(12, 12, 12);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em;
+      background: rgb(243, 210, 121);
+    }
+    h2 {
+      color: #bf5700;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+    }
+    th, td {
+      border: 1px solid #bf5700;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #ff9800;
+      color: white;
+    }
+    td {
+      background-color: #ffe0b2;
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #2c3e50;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #27ae60;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #2c3e50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tiger Martial Arts</h1>
+  <p>Strength. Discipline. Respect.</p>
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="index.html#classes">Classes</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#account">My Account</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Martial Arts Class Timetable</h2>
+
+  <table>
+    <tr>
+      <th>Time</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    <tr>
+      <td>06:00–07:30</td>
+      <td>Jiu-jitsu</td>
+      <td>Karate</td>
+      <td>Judo</td>
+      <td>Jiu-jitsu</td>
+      <td>Muay Thai</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>08:00–10:00</td>
+      <td>Muay Thai</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+      <td>Jiu-jitsu</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+    </tr>
+    <tr>
+      <td>10:30–12:00</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+      <td>Private tuition</td>
+      <td>Judo</td>
+      <td>Karate</td>
+    </tr>
+    <tr>
+      <td>13:00–14:30</td>
+      <td>Open mat/ personal practice</td>
+      <td>Open mat/ personal practice</td>
+      <td>Open mat/ personal practice</td>
+      <td>Open mat/ personal practice</td>
+      <td>Open mat/ personal practice</td>
+      <td>Karate</td>
+      <td>Judo</td>
+    </tr>
+    <tr>
+      <td>15:00–17:00</td>
+      <td>Kids jiu-jitsu</td>
+      <td>Kids judo</td>
+      <td>Kids karate</td>
+      <td>Kids jiu-jitsu</td>
+      <td>Kids judo</td>
+      <td>Muay Thai</td>
+      <td>Jiu-jitsu</td>
+    </tr>
+    <tr>
+      <td>17:30–19:00</td>
+      <td>Karate</td>
+      <td>Muay Thai</td>
+      <td>Judo</td>
+      <td>Jiu-jitsu</td>
+      <td>Muay Thai</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>19:00–21:00</td>
+      <td>Jiu-jitsu</td>
+      <td>Judo</td>
+      <td>Jiu-jitsu</td>
+      <td>Karate</td>
+      <td>Private tuition</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<footer>
+  <p>&copy; 2025 Tiger Martial Arts | Website by WebWorld</p>
+  <p>Email: <a href="mailto:md.munna@regentedcation.ae" style="color: #fff;">md.munna@regentedcation.ae</a></p>
+  <p>Phone: +971 56 130 4251</p>
+  <div class="social-icons">
+    <a href="#" title="Facebook">📘</a>
+    <a href="#" title="Instagram">📸</a>
+    <a href="#" title="YouTube">▶️</a>
+  </div>
+</footer>
+
+</body>
+</html>

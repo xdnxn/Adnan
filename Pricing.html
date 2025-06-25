@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - Tiger Martial Arts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbuEe8VcGo2wqTLU99IWg2KmGkQs4lIcNROr02fRZ5jNGdLjY3Bpj5zh8Qq-_ZwaNKxg&usqp=CAU') no-repeat center center/cover;
+      color: rgb(8, 8, 8);
+      padding: 4em 2em;
+      text-align: center;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    header h1, header p {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    nav {
+      margin-top: 1em;
+    }
+    nav a {
+      color: rgb(12, 12, 12);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .billing-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em;
+      background: rgb(243, 210, 121);
+    }
+    .billing-header {
+      text-align: left;
+      margin-bottom: 2em;
+    }
+    .billing-header h1 {
+      font-size: 36px;
+      color: #9b3900;
+    }
+    .billing-header p {
+      font-size: 18px;
+      color: #ee850d;
+    }
+    .plan-card {
+      background: #f0ad77;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 2em;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    }
+    .plan-header h2 {
+      font-size: 24px;
+      color: #f55d05;
+    }
+    .price {
+      font-size: 36px;
+      font-weight: bold;
+      color: #490101;
+    }
+    .currency {
+      font-size: 24px;
+      vertical-align: super;
+    }
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+    }
+    .features li {
+      margin-bottom: 0.5em;
+    }
+    .cta-button {
+      background-color: #942504;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    .cta-button:hover {
+      background-color: #731d00;
+    }
+    .currency-selector {
+      text-align: center;
+      margin-top: 2em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #e78e08;
+      color: white;
+    }
+    td {
+      background-color: #fff6e5;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #2c3e50;
+      color: white;
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tiger Martial Arts</h1>
+  <p>Strength. Discipline. Respect.</p>
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="class.html">Classes</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#account">My Account</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="instructor.html">Instructors Info</a>
+  </nav>
+</header>
+
+<div class="billing-container">
+  <div class="billing-header">
+    <h1>Choose the Right Plan</h1>
+    <p>Get the best value pricing and membership plans.</p>
+  </div>
+
+  <!-- Membership Plans -->
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Basic</h2>
+      <div class="price"><span class="currency">£</span>25/month</div>
+    </div>
+    <ul class="features">
+      <li>1 martial art</li>
+      <li>2 sessions per week</li>
+    </ul>
+    <button class="cta-button">Upgrade</button>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Intermediate</h2>
+      <div class="price"><span class="currency">£</span>35/month</div>
+    </div>
+    <ul class="features">
+      <li>1 martial art</li>
+      <li>3 sessions per week</li>
+    </ul>
+    <button class="cta-button">Upgrade</button>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Advanced</h2>
+      <div class="price"><span class="currency">£</span>45/month</div>
+    </div>
+    <ul class="features">
+      <li>Any 2 martial arts</li>
+      <li>5 sessions per week</li>
+    </ul>
+    <button class="cta-button">Upgrade</button>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Elite</h2>
+      <div class="price"><span class="currency">£</span>60/month</div>
+    </div>
+    <ul class="features">
+      <li>Unlimited classes</li>
+    </ul>
+    <button class="cta-button">Upgrade</button>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Private Martial Arts Tuition</h2>
+      <div class="price"><span class="currency">£</span>15/hour</div>
+    </div>
+    <ul class="features">
+      <li>1-on-1 private training</li>
+    </ul>
+    <button class="cta-button">Upgrade</button>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Junior Membership</h2>
+      <div class="price"><span class="currency">£</span>25/month</div>
+    </div>
+    <ul class="features">
+      <li>Access to all kids martial arts sessions</li>
+    </ul>
+    <button class="cta-button">Upgrade</button>
+  </div>
+
+  <!-- Specialist Courses Table -->
+  <div class="plan-card">
+    <div class="plan-header">
+      <h2>Specialist Courses and Fitness Training</h2>
+    </div>
+    <table>
+      <tr>
+        <th>Course</th>
+        <th>Price (£)</th>
+      </tr>
+      <tr>
+        <td>Six-week beginners’ self-defence course<br>(2 × 1-hour sessions per week)</td>
+        <td>180.00</td>
+      </tr>
+      <tr>
+        <td>Use of fitness room – per visit</td>
+        <td>6.00</td>
+      </tr>
+      <tr>
+        <td>Personal fitness training – per hour</td>
+        <td>35.00</td>
+      </tr>
+    </table>
+    <br>
+    <button class="cta-button" onclick="toggleContact()">Contact Us</button>
+    <div id="contactInfo" style="display: none; margin-top: 1em;">
+      <p><strong>Email:</strong> <a href="mailto:md.munna@regentedcation.ae">md.munna@regentedcation.ae</a></p>
+      <p><strong>Phone:</strong> +971 56 130 4251</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleContact() {
+      const contactDiv = document.getElementById("contactInfo");
+      contactDiv.style.display = contactDiv.style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+  <div class="currency-selector">
+    <label for="currency">Select Currency:</label>
+    <select id="currency">
+      <option value="£">GBP</option>
+      <option value="$">USD</option>
+      <option value="€">EUR</option>
+    </select>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Tiger Martial Arts | Website by WebWorld</p>
+  <p>Email: <a href="mailto:md.munna@regentedcation.ae" style="color: #fff;">md.munna@regentedcation.ae</a></p>
+  <p>Phone: +971 56 130 4251</p>
+  <div class="social-icons">
+    <a href="#" title="Facebook">📘</a>
+    <a href="#" title="Instagram">📸</a>
+    <a href="#" title="YouTube">▶️</a>
+  </div>
+</footer>
+
+</body>
+</html>

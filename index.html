@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tiger Martial Arts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbuEe8VcGo2wqTLU99IWg2KmGkQs4lIcNROr02fRZ5jNGdLjY3Bpj5zh8Qq-_ZwaNKxg&usqp=CAU') no-repeat center center/cover;
+      color: rgb(8, 8, 8);
+      padding: 4em 2em;
+      text-align: center;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    header h1, header p {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    nav {
+      margin-top: 1em;
+    }
+    nav a {
+      color: rgb(12, 12, 12);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2em;
+      background: rgb(243, 210, 121);
+    }
+    section {
+      margin-bottom: 3em;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ffffff;
+      margin-bottom: 1em;
+    }
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+    .card {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1em;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1em;
+    }
+    ul li::before {
+      content: "✔";
+      color: #27ae60;
+      margin-right: 8px;
+    }
+    .login-box {
+      text-align: center;
+      padding: 1em;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .login-box button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background: #219150;
+    }
+    .social-icons {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #2c3e50;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #27ae60;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #2c3e50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tiger Martial Arts</h1>
+  <p>Strength. Discipline. Respect.</p>
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="class.html">Classes</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="account.html">My Account</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="instructor.html">Instructors Info</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>Tiger Martial Arts</strong>, Sharjah’s premier training centre for martial arts and fitness. We offer classes in Karate, Jiu-jitsu, Judo, Muay Thai, and self-defence for all age groups and skill levels. Our facility includes a fully-equipped gym, steam room, sauna, and professional-grade mats.</p>
+  </section>
+
+  <section id="classes">
+    <h2>Our Classes</h2>
+    <div class="class-grid">
+      <div class="card">
+        <img src="https://static.vecteezy.com/system/resources/previews/020/436/051/non_2x/illustration-of-couple-practice-karate-fight-background-for-t-shirt-poster-etc-vector.jpg" alt="Karate">
+        <div class="card-content">
+          <h3>Karate</h3>
+          <p>Traditional martial art focused on discipline, strength, and self-defence.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.favpng.com/19/13/9/judo-martial-arts-sports-desktop-wallpaper-wat-stadlau-png-favpng-UTEqGunRKTXFe7TkLBvHhdgve.jpg" alt="Judo">
+        <div class="card-content">
+          <h3>Judo</h3>
+          <p>Learn the art of throws, takedowns, and grappling in this Olympic sport.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://us.123rf.com/450wm/sila5775/sila57751711/sila5775171100160/90241808-muay-thai-thai-boxen-stehen-bereit-aktion-grafik-vektor-zu-k%C3%A4mpfen.jpg?ver=6" alt="Muay Thai">
+        <div class="card-content">
+          <h3>Muay Thai</h3>
+          <p>High-intensity striking and fitness program from Thailand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing & Membership</h2>
+    <ul>
+      <li>Basic (1 martial art – 2 sessions/week): £25/month</li>
+      <li>Intermediate (1 martial art – 3 sessions/week): £35/month</li>
+      <li>Advanced (2 martial arts – 5 sessions/week): £45/month</li>
+      <li>Elite (Unlimited classes): £60/month</li>
+      <li>Private Tuition: £15/hour</li>
+      <li>Junior Membership (Kids): £25/month</li>
+    </ul>
+  </section>
+
+  <section id="account">
+    <h2>My Account</h2>
+    <div class="login-box">
+      <p>Manage your membership, book classes, and update your profile.</p>
+      <a href="account.html"><button>Create an Account</button></a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:md.munna@regentedcation.ae">md.munna@regentedcation.ae</a></p>
+    <p>Phone: +971 56 130 4251</p>
+    <div class="social-icons">
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="Instagram">📸</a>
+      <a href="#" title="YouTube">▶️</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Tiger Martial Arts | Website by WebWorld</p>
+</footer>
+
+</body>
+</html>

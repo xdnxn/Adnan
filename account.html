@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account - Tiger Martial Arts</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    header {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbuEe8VcGo2wqTLU99IWg2KmGkQs4lIcNROr02fRZ5jNGdLjY3Bpj5zh8Qq-_ZwaNKxg&usqp=CAU') no-repeat center center/cover;
+      color: rgb(8, 8, 8);
+      padding: 4em 2em;
+      text-align: center;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    nav {
+      margin-top: 1em;
+    }
+
+    nav a {
+      color: rgb(12, 12, 12);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2em auto;
+      background-color: rgb(243, 210, 121);
+      padding: 2em;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #942504;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #731d00;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: rgb(243, 210, 121);
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 1em;
+      color: #942504;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .user-details {
+      background-color: #fff;
+      padding: 1em;
+      margin-top: 1em;
+      border-radius: 6px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tiger Martial Arts</h1>
+  <p>Strength. Discipline. Respect.</p>
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="class.html">Classes</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="account.html">My Account</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="instructor.html">Instructors Info</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Welcome to Tiger Martial Arts</h2>
+  <button id="openModalBtn">Create Account</button>
+
+  <div id="accountInfo" class="user-details" style="display:none;"></div>
+</div>
+
+<!-- Modal -->
+<div id="accountModal" class="modal">
+  <div class="modal-content">
+    <h2>Create Account</h2>
+    <div id="error" class="error"></div>
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="phone" placeholder="Phone No (numbers only)" required />
+    <input type="text" id="place" placeholder="Place" />
+    <input type="text" id="address" placeholder="Address (optional)" />
+    <input type="password" id="password" placeholder="Create Password" required />
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+    <button onclick="createAccount()">Create</button>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("accountModal");
+  const openBtn = document.getElementById("openModalBtn");
+  const accountInfo = document.getElementById("accountInfo");
+  const errorDiv = document.getElementById("error");
+
+  openBtn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  function createAccount() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const place = document.getElementById("place").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    errorDiv.innerText = "";
+
+    if (!name || !email || !phone || !password || !confirmPassword) {
+      errorDiv.innerText = "All fields except Address and Place are required.";
+      return;
+    }
+
+    if (isNaN(phone)) {
+      errorDiv.innerText = "Phone number must be numeric.";
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      errorDiv.innerText = "TRY AGAIN: Passwords do not match.";
+      return;
+    }
+
+    modal.style.display = "none";
+    openBtn.style.display = "none";
+
+    accountInfo.style.display = "block";
+    accountInfo.innerHTML = `
+      <div class="success">🎉 Welcome to Tiger Martial Arts, ${name}!</div><br>
+      <strong>Name:</strong> ${name}<br>
+      <strong>Email:</strong> ${email}<br>
+      <strong>Phone:</strong> ${phone}<br>
+      ${place ? `<strong>Place:</strong> ${place}<br>` : ""}
+      ${address ? `<strong>Address:</strong> ${address}<br>` : ""}
+    `;
+  }
+</script>
+
+</body>
+</html>
